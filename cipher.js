@@ -1,16 +1,33 @@
 function cipher( messageToBeCiphered ) {
 	//var caesarCipherTable = Object.entries(obj);
 	var lengthMessage = messageToBeCiphered.length;
+	var message = '';
+
 	var numberFixed = 33;
+	var numberX; //FIND A BETTER NAME!
 
-	// for ( var i = 0; i < lengthMessage; i++) {
-	//   //verifica se é maiúscula
-	//   if (messageToBeCiphered.charAt(i) === (messageToBeCiphered.charAt(i)).toUpperCase() ){
 
-	//   } else {
-	//     console.log('minuscula');
-	//   }
-	// }
+	for ( var i = 0; i < lengthMessage; i++) {
+	  //verifica se é maiúscula
+	  //Trata maiuscula
+	  if (messageToBeCiphered.charAt(i) === (messageToBeCiphered.charAt(i)).toUpperCase() ){
+	  	numberx = 65;
+	  	var letter = messageToBeCiphered.charCodeAt(i) - numberX; //32 ok
+	  	var letterCiphered = String.fromCharCode((letter + numberFixed) % 26 + numberX);
+		message += letterCiphered;
+
+
+	  } else { //Trata minuscula
+	    //console.log('minuscula');
+	    numberX = 97;
+	    var letter = messageToBeCiphered.charCodeAt(i) - numberX; //32 ok
+	  	var letterCiphered = String.fromCharCode((letter + numberFixed) % 26 + numberX);
+		message += letterCiphered;
+
+	  }
+	}
+	console.log(message);
+
 
 	//MAUISCULA
 	// for(var i = 0; i < lengthMessage; i++) {
@@ -19,21 +36,18 @@ function cipher( messageToBeCiphered ) {
 	//   //console.log(letterASCIICiphered);
 	// }
 
-	var message = '';
 	//MINUSCULA
-	for (var i = 0; i < lengthMessage; i++) {
-		var letter = messageToBeCiphered.charCodeAt(i) - 97;
+	// for (var i = 0; i < lengthMessage; i++) {
+	// 	var letter = messageToBeCiphered.charCodeAt(i) - 97;
 
-		if (letter != -65) {
-			//tratar espaco
-			var letterCiphered = String.fromCharCode(
-				(letter + numberFixed) % 26 + 97
-			);
-			message += letterCiphered;
-		} else {
-			message += ' ';
-		}
-	}
+	// 	if (letter != -65) {
+	// 		//tratar espaco
+	// 		var letterCiphered = String.fromCharCode((letter + numberFixed) % 26 + 97);
+	// 		message += letterCiphered;
+	// 	} else {
+	// 		message += ' ';
+	// 	}
+	// }
 	console.log(message);
 }
 
