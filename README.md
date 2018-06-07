@@ -14,6 +14,6 @@ Implementação do algoritmo da cifra de Cesar para cifragem e decifragem de men
 6. 
 7. 
 
-## Pseudocódigo da cifragem:
+## Pseudocódigo da decifragem:
 
 
